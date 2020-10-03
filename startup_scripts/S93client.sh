@@ -2,21 +2,21 @@
 
 [ -f /root/basestation ] || exit 0
 
-# Autostart the basestation service
+# Autostart the client service
 
 start() {
-  	if [ `fw_printenv -n hnap_bs_autostart` = 1 ]
+  	if [ `fw_printenv -n hnap_cli_autostart` = 1 ]
 	then
-		printf "Starting basestation application"
-		/root/./basestation &
+		printf "Starting client application"
+		/root/./client &
 	fi
 	echo "done"
 }
 
 
 stop() {
-	printf "Stopping basestation: "
-	killall basestation
+	printf "Stopping client: "
+	killall client
 	echo "done"
 }
 
